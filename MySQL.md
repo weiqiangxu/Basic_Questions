@@ -77,3 +77,7 @@ https://www.cnblogs.com/panwenbin-logs/p/8366940.html
 https://www.cnblogs.com/panwenbin-logs/p/8366940.html
 
 34、数据库事务的四个特性及含义
+
+35、Mysql中什么时候会出现数据丢失、怎样预防数据丢失
+
+36、简述Mysql集群 
