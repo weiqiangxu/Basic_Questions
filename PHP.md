@@ -70,3 +70,5 @@ http://www.jquerycn.cn/a_26929
 例如: http://www.sina.com.cn/abc/de/fg.php?id=1 需要取出php或.php
 
 35、 写一个函数，算出两个文件的相对路径如 $a = '/a/b/c/d/e.php';$b = '/a/b/12/34/c.php';
+
+36、$tmp = array('name' => 'jack','age'=>30);var_dump(boolval(empty($tmp['height']))); 请问输出结果;
