@@ -72,3 +72,5 @@ http://www.jquerycn.cn/a_26929
 35、 写一个函数，算出两个文件的相对路径如 $a = '/a/b/c/d/e.php';$b = '/a/b/12/34/c.php';
 
 36、$tmp = array('name' => 'jack','age'=>30);var_dump(boolval(empty($tmp['height']))); 请问输出结果;
+
+37、var_dump('0'=='count');var_dump(0=='count');请问输出结果;
