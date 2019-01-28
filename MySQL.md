@@ -62,7 +62,7 @@ https://www.cnblogs.com/chenqionghe/p/4845693.html
 27、innodb的事务与日志的实现方式（日志存放、如何通过日志实现事务）
 https://www.cnblogs.com/panwenbin-logs/p/8366940.html
 
-28、下MySQL数据库cpu飙升到500%的话该怎么处理
+28、线上环境下MySQL数据库cpu飙升到500%的话该怎么处理
 https://www.cnblogs.com/panwenbin-logs/p/8366940.html
 
 29、备份计划，mysqldump以及xtranbackup的实现原理
@@ -81,3 +81,5 @@ https://www.cnblogs.com/panwenbin-logs/p/8366940.html
 35、Mysql中什么时候会出现数据丢失、怎样预防数据丢失
 
 36、简述Mysql集群 
+
+37、有没接触过MySQL慢日志监控及报警

@@ -12,4 +12,10 @@
 
 7、你们对Nginx日志有做监控吗，有无相应的报警机制，比如流量攻击
 
-8、你最常用的Linux指令有哪些？netstat/chmod/vim/grep/rm/mv/ps/tar/
+8、你最常用的Linux指令有哪些？netstat/chmod/vim/grep/rm/mv/ps/tar/find/pwd/uname/crontab/tail/cp
+
+9、请写出指令查找/home文件夹以内的所有文件类型为.log的文件
+
+10、请写出定时任务每2个小时执行的指令
+
+11、负载均衡的情况下如何使用session，rsync指令，同步几台Linux机器磁盘文件
