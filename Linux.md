@@ -12,10 +12,19 @@
 
 7、你们对Nginx日志有做监控吗，有无相应的报警机制，比如流量攻击
 
-8、你最常用的Linux指令有哪些？netstat/chmod/vim/grep/rm/mv/ps/tar/find/pwd/uname/crontab/tail/cp
+8、你最常用的Linux指令有哪些？netstat/chmod/vim/grep/rm/mv/ps/tar/find/pwd/uname/crontab/tail/cp/pstree/pkill
 
 9、请写出指令查找/home文件夹以内的所有文件类型为.log的文件
 
 10、请写出定时任务每2个小时执行的指令
 
 11、负载均衡的情况下如何使用session，rsync指令，同步几台Linux机器磁盘文件
+
+12、说一说什么是正向代理、反向代理，他们常见应用场景是什么
+
+13、什么是php-fpm，他与高并发有什么关系，初始化线上环境，你最常做的fpm的配置是那些
+
+14、你配置过Nginx的负载均衡吗，请问负载均衡有哪几种形式，各自的优缺点是啥
+
+15、请说一下你对PHP慢日志的了解，有做过相关监控和报警吗
+
