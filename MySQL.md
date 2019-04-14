@@ -14,7 +14,7 @@ MySQL基础题：
 
 7、select * from table1 where name=''zhangsan'' and tID > 10000和执行select * from table1 where tID > 10000 and name=''zhangsan''的速度是否一样
 
-8、索引失效（全表扫描）的情况有哪些
+8、索引失效（全表扫描.的情况有哪些
 
 9、简单说一下什么是聚集索引、非聚集索引
 
@@ -51,15 +51,15 @@ https://www.cnblogs.com/chenqionghe/p/4845693.html
 
 22、简述mysql主从复制原理以及作用
 
-23、谈谈数据库优化的方式（建表、使用）
+23、谈谈数据库优化的方式（建表、使用.
 
 24、简述数据库三大范式
 
 25、连表查询的种类
 
-26、关于MySQL规范，你有什么建议（设计规范、设计原则）
+26、关于MySQL规范，你有什么建议（设计规范、设计原则.
 
-27、innodb的事务与日志的实现方式（日志存放、如何通过日志实现事务）
+27、innodb的事务与日志的实现方式（日志存放、如何通过日志实现事务.
 https://www.cnblogs.com/panwenbin-logs/p/8366940.html
 
 28、线上环境下MySQL数据库cpu飙升到500%的话该怎么处理
@@ -83,3 +83,9 @@ https://www.cnblogs.com/panwenbin-logs/p/8366940.html
 36、简述Mysql集群 
 
 37、有没接触过MySQL慢日志监控及报警
+
+38、索引的类型有哪几种,组合索引要遵守什么原则
+
+39、简述MySQL之中,索引、主键、唯一索引、联合索引的区别,对数据库性能有什么影响(从读写两个方面)
+
+40、简述memcache的工作原理
