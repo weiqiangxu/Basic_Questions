@@ -1,25 +1,44 @@
-1、<?php echo count(strlen(“http://php.net”)); ?>的执行结果是什么
+1、<?php echo count(strlen('http://php.net')); ?>的执行结果是什么 1
 
-2、$temp = array('a'=>"dog","cat","horse");list($a, $b, $c) = $temp;$a输出结果是多少
+2、$temp = array("dog","cat","horse");list($a, $b, $c) = $temp;$a输出结果是多少 dog
 
-3、请写一个函数遍历打印出某个文件夹的目录树
+3、请写一个函数遍历打印出某个文件夹的目录树 dir,read,close,is_dir
 
 4、简述php的垃圾收集机制。
 
+PHP的变量存储在zval的变量容器之中,存储主要3部分：类型|值|是否引用,清除变量的依据是该变量的引用次数为0,当变量自身引用自身的时候,unset无法将引用次数归零,导致内存泄漏,只是PHP脚本在执行完毕以后会清除所有变量所以问题不大.zend_extension-xdebug可以xdebug_debug_zval查看变量引用数,本人无法模拟该方式实现内存泄漏
+
+
 5、用php实现一个双向队列
-https://www.cnblogs.com/pentacles/p/6441525.html
+
+用数组实现则是array_unshift(头部插入元素)|array_shift(删除第一个元素并返回)|array_push(尾部插入元素)|array_pop(删除最后一个元素并返回)
 
 6、什么是composer？以及composer是干什么用的？工作原理
 
+是1个安装包管理工具,主要用于扩展包的安装
+
+
 7、你了解设计模式吗？说下你最常用的设计模式
+
+设计模式是在一些特定的场景惯用的处理方式。
+有23种设计模式,分3个类型创建、结构、行为.工厂模式(商城支付类)|单例模式(数据库连接MySQL、oracle)|MVC模式|外观模式(Laravel的数据库扩展Facade)
+
 
 8、PHP的优化方案
 
+编程习惯方面：单引号替换双引号|尽量使用PHP内置的数组操作方法|字符串函数替换正则函数|include文件时尽量使用绝对路径|switch比if更快|foreach效率更高，尽量用foreach代替while和for循环|file_get_contents比file、fopen、feof、fgets效率更高
+
 9、PHP的漏洞有哪些以及相应的处理方式(至少6个)
 
-10、$a=array("red","green","blue","yellow","brown");array_rand($a,3)\array_rand($a,3)返回值是多少
+Session会话劫持/可操作的参数名(GET参数非法字符script或者数据库语句)/eval命令执行/preg_replace的e修饰符会使进行替换时的replacement参数以PHP方式执行
+
+10、$a=array("red","green","blue","yellow","brown");$z=array_rand($a,3);$z值是多少  返回一个数组有3个元素值为健值,当array($a)时候仅仅返回一个健值
 
 11、什么是CSRF攻击,XSS攻击？如何防范
+
+跨站请求伪造(Cross-site request forgery):请求令牌token/referer客户端IP限制(虽然没啥子用)/(验证码-但影响用户体验)
+跨站脚本攻击(Cross Site Scripting):论坛上输入script脚本在该评论输出时候被浏览器解析执行,使用script脚本获取cookie并ajax形式发送到信息收集的服务器上或者弹框诱导用户点击链接,htmlspecialchars过滤
+
 
 12、说下你目前框架的生命周期
 
@@ -27,7 +46,12 @@ https://www.cnblogs.com/pentacles/p/6441525.html
 
 14、你了解RESTful API吗？说说干什么用的
 
+目前比较成熟的一套互联网应用程序的API设计理论.一种接口设计规范,用于规范接口设计
+
 15、如果实现自动加载,不用composer如何实现,PSR-4是什么
+
+使用魔术方法__autoload/spl_autoload_register注册自动加载函数/创建类库映射数组
+PSR-4是由文件路径自动载入对应类的相关规范(类库加载规范),限定类名与存储路经大小写等风格
 
 16、你熟悉的nosql有哪些
 
@@ -37,47 +61,71 @@ https://www.cnblogs.com/pentacles/p/6441525.html
 
 19、简述什么是OOP、类和对象、属性
 
+OOP是Object_oriented Programming(面向对象编程)的缩写。
+类是具有相同属性和服务的一组对象的集合。
+对象是系统中用来描述客观事物的一个实体,它是构成系统的一个基本单位。
+类与对象的关系就如模具和铸件的关系,类的实例化结果就是对象,而对一类对象的抽象就是类.类描述了一组有相同特性(属性)和相同行为(方法)的对象。
+
 20、常用的属性的访问修饰符
+
+public:表示全局,可以在本类内部,类外部,子类中使用
+private:私有,只能在本类中使用 
+protected:保护,可以在本类内部,子类中使用
 
 21、web安全有哪些
 
+XSS攻击/CSRF攻击/SQL注入攻击
+
 22、是否用到过socket编程,socket与curl区别
+
+socket是及时通讯开启php_socket扩展即可开启会话,curl是ftp、http等协议会话
 
 23、简述PHP反射作用以及应用场合
 
+导出或提取出关于类、方法、属性、参数等的详细信息,包括注释。
+主要用于解析URL之后过滤参数,执行function等
+
 24、HTTP协议中的POST和GET有何区别
+
+都是http协议的请求方式
+参数：get请求参数直接附加到url上并且有长度限制一般用于查询数据,get的请求会被浏览器缓存、记录
+post请求参数会放到http请求包的request参数之中所以安全性略高于get,post请求不会被浏览器所记录,post请求没有长度的限制,常用于上传文件
+get请求大小限制不同浏览器的不一样,chrome的url长度限制是8182字符,IE的是2083也就是不要超过2kb
 
 25、reqiure的include都可包含文件二者的区别
 
+include引入不存在的文件时产生一个警告继续执行而require则致命错误并停止执行
+
 26、PHP中WEB上传文件的原理是什么
+
+客户端:请求方式post,添加enctype='multipart/form-data'
+服务端:配置file_uploads/upload_max_filesize/post_max_size,文件上传以后会存储在tmp临时文件夹,之后通过move_uploaded_file转存到目标路经
 
 27、有一个论坛,帖子的数据巨大,请简要说明如何提高用户搜索帖子的效率
 
 28、请用PHP脚本解析出在'srfi.schemers.org/srfi-28/mail-archive/maillist.html'这个页面中出现的所有email,并保存到数组
 
-29、如何实现字符串翻转
+29、如何实现字符串翻转 - strrev
 
-30、在php中,heredoc是一种特殊的字符串,它的结束标志必须遵循什么规则
-http://www.jquerycn.cn/a_26929
+30、在php中,heredoc是一种特殊的字符串,它的结束标志必须遵循什么规则 - 结束标志必须成对出现
 
-31、请写一个函数验证电子邮件的格式是否正确
+31、请写一个函数验证电子邮件的格式是否正确 - filter_var($email,FILTER_VALIDATE_EMAIL)
 
-32、PHP如何修改session的生存时间
+32、PHP如何修改session的生存时间 - session.cookie_lifetime设置客户端生命周期,gc_maxlifetime设置服务端文件回收周期(不保证立马得到回收)
 
 33、使用php写一段简单查询,查出所有姓名为“张三”的内容并打印出来
 
-34、写一个函数,尽可能高效的,从一个标准 url 里取出文件的扩展名
-例如: http://www.sina.com.cn/abc/de/fg.php?id=1 需要取出php或.php
+34、写一个函数,尽可能高效的,从一个标准 url 里取出文件的扩展名 - pathinfo(path,PATHINFO_EXTENSION)
 
 35、 写一个函数,算出两个文件的相对路径如 $a = '/a/b/c/d/e.php';$b = '/a/b/12/34/c.php';
 
 36、$tmp = array('name' => 'jack','age'=>30);var_dump(boolval(empty($tmp['height']))); 请问输出结果;
 
-37、var_dump('0'=='count');var_dump(0=='count');请问输出结果;
+37、var_dump('0'=='count');var_dump(0=='count');请问输出结果; bool(true),数字和字符串比较(非强等于)首先会将字符串intaval,因为字符串count的int结果是0
 
-38、用最少的代码写一个求3值最大值的函数.
+38、用最少的代码写一个求3值最大值的函数. max($a,$b $c);
 
-39、用PHP实现一个双向队列
+39、用PHP实现一个双向队列 - 数组实现
 
 40、SQL和cookie、session的联系和区别
 
